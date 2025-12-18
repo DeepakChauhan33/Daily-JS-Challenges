@@ -237,4 +237,43 @@ console.log(fizzBuzz(12));
 
 function findPrimes(n){
     
+    const primeArr = [];
+
+    if(n===1){
+        return primeArr.push(n);
+    }
+
+    for(let i=2 ; i<=n ; i++){
+        if(n%i !== 0){
+            primeArr.push(i);
+        }
+    }
+
+
+    return primeArr;
 }
+
+
+console.log(findPrimes(20));
+
+
+
+
+
+
+// Character Reversal
+
+function reverseString(str){
+
+    let strArr = str.split(" ").reverse().map(item =>{
+        return item.split("").reverse().join("");
+    }).join(" ");
+
+    console.log(strArr);
+}
+
+reverseString("AlmaBetter University");
+
+
+
+

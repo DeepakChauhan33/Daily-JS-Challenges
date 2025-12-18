@@ -800,10 +800,10 @@ const cart1 = [
 // console.log(calculateTotal(cart1));
 
 
-function greaterVal(arr){
+function greaterVal(arr){    // In this question we have to check the first value So we used find() method here not forEach
     let greaterValue = arr[0];
     arr.forEach(element => {
-        if(element>greaterValue){
+        if(element>greaterValue){ 
             greaterValue=element;
         }
     });
