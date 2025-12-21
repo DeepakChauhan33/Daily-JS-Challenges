@@ -345,15 +345,101 @@ console.log(generateSlug("AlmaBetter     Web Dev"))
 
 // Shortest Word Distance
 
-function shortestDistance(str1, str2){
+function shortestDistance(wordsDict,str1, str2){
 
-    const wordsDict = ["apple", "banana", "cherry", "apple", "date", "banana", "fig"];
-    let first = wordsDict.indexOf(str1);
-    let second = wordsDict.indexOf(str2);
+    let index1 = -1; 
+    let index2 = -1; 
+    let minDistance = Infinity;
 
-    console.log(first, second);
+    for (let i = 0; i < wordsDict.length; i++) {
+        if (wordsDict[i] === str1) {
+            index1 = i;
+        }
+        if (wordsDict[i] === str2) {
+            index2 = i;
+        }
 
+     if (index1 !== -1 && index2 !== -1) {
+            const distance = Math.abs(index1 - index2);
+            if (distance < minDistance) {
+                minDistance = distance;
+            }
+        }
+    }
+
+    return minDistance;
+}
+
+const wordsDict = ["practice", "makes", "perfect", "coding", "makes"];
+console.log(shortestDistance(wordsDict, "coding", "makes")); // Output: 1
+console.log(shortestDistance(wordsDict, "practice", "perfect")); // Output: 1
+
+
+
+// Flip Game
+
+function findMove(str){
+
+    const result = [];
+
+    for(let i=0; i<str.length-1; i++){
+        if(str[i]=== "+" && str[i+1]==="+"){
+            const newMove = str.slice(0,i)+"--"+str.slice(i+2);
+            result.push(newMove);
+        }
+    }
+
+    return result;
+}
+
+console.log(findMove("++-++"));
+
+
+// Swap Consecutive Characters
+
+
+function swapConsecutiveCharacters(str){
+
+      let result = "";
+
+    for (let i = 0; i < str.length; i += 2) {
+        if (i + 1 < str.length) {
+            result += str[i + 1] + str[i];
+        } else {
+            result += str[i];
+        }
+    }
+
+    return result;
 }
 
 
-shortestDistance("apple", "cherry")
+console.log(swapConsecutiveCharacters("Deepka"));
+
+
+// Array Intersection
+
+function arrayIntersection(arr1, arr2){
+
+    // const commonArr = [];
+    // for(const item of arr1){
+    //     if(arr2.includes(item) && !commonArr.includes(item)){
+    //         commonArr.push(item);
+    //     }
+    // }
+    // return commonArr;
+
+    const setArr = new Set(arr2);
+    const commonArr = new Set();
+
+    for(const item of arr1){
+        if(setArr.has(item)){
+            commonArr.add(item);
+        }
+    }
+
+    return [...commonArr];
+
+}
+
+console.log(arrayIntersection([1, 2, 2, 3, 4, 5], [2, 3, 3, 6]));
