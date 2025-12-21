@@ -152,7 +152,9 @@ function countOccurrences(str, char) {
 
     // return count;
 
+    console.log(str.split(char));
     return str.split(char).length - 1;
+    
 }
 
 console.log(countOccurrences("My name is Deepak", "e"));
@@ -239,16 +241,20 @@ function findPrimes(n){
     
     const primeArr = [];
 
-    if(n===1){
-        return primeArr.push(n);
-    }
+    for(let i=2; i<=n; i++){
+        let isPrime = true;
 
-    for(let i=2 ; i<=n ; i++){
-        if(n%i !== 0){
+        for(let j=2 ; j<=Math.sqrt(i); j++){
+            if(i%j === 0){
+                isPrime = false;
+                break;
+            }
+        }
+
+        if(isPrime){
             primeArr.push(i);
         }
     }
-
 
     return primeArr;
 }
@@ -276,4 +282,78 @@ reverseString("AlmaBetter University");
 
 
 
+// Sign of Product
 
+function signOfProduct(arr){
+
+    let negativeCount = 0;
+
+    for(const elem of arr){
+        if(elem === 0){
+            return 0;
+        }
+    if(elem < 0){
+        negativeCount++;
+    }
+
+    }
+
+    return negativeCount%2===0? 1 : -1;
+}
+
+
+console.log(signOfProduct([56, -3, -5, -4]));
+
+
+
+
+// Check Sign
+
+
+function checkSign(a,b,c){
+
+    let arr = [a,b,c];
+    let signArr = arr.map(num => {
+        if(num>0){
+            return "+";
+        }else{
+            return "-";
+        }
+    })
+
+    return signArr.join("");
+
+}
+
+console.log(checkSign(-2,-5,8));
+
+
+// URL Slug Generator
+
+function generateSlug(str){
+
+
+    // return str.trim().toLowerCase().replaceAll(" ", "-")+".com";
+
+    return str.trim().toLowerCase().replaceAll(/\s+/g, "-")+".com";
+}
+
+console.log(generateSlug("AlmaBetter     Web Dev"))
+
+
+
+
+// Shortest Word Distance
+
+function shortestDistance(str1, str2){
+
+    const wordsDict = ["apple", "banana", "cherry", "apple", "date", "banana", "fig"];
+    let first = wordsDict.indexOf(str1);
+    let second = wordsDict.indexOf(str2);
+
+    console.log(first, second);
+
+}
+
+
+shortestDistance("apple", "cherry")
