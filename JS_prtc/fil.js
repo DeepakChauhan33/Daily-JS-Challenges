@@ -154,7 +154,7 @@ function countOccurrences(str, char) {
 
     console.log(str.split(char));
     return str.split(char).length - 1;
-    
+
 }
 
 console.log(countOccurrences("My name is Deepak", "e"));
@@ -211,7 +211,7 @@ function fizzBuzz(n) {
                 newArr.push("Buzz")
                 break;
 
-            default :
+            default:
                 newArr.push(String(i));
         }
 
@@ -223,35 +223,26 @@ function fizzBuzz(n) {
 
 console.log(fizzBuzz(12));
 
-// Here I have two implementations of FizzBuzz.
-// The first uses a classic if-else chain — very straightforward, beginner-friendly, and works perfectly.
-// The second version uses a switch(true) statement. At first glance, it may look unusual because normally switch checks for exact values.
-// But here, switching on true allows each case to be a boolean condition.
-// This makes all decision rules centralized in one block and easy to extend if we want to add new conditions later.
-// We also use break to prevent fall-through, and default handles numbers not matching any Fizz/Buzz conditions, converting them to strings for consistency.
-// Overall, this version is slightly more advanced, keeps the logic organized, and is easier to maintain when we scale the number of rules."
-
-
 
 
 
 // Prime Numbers
 
-function findPrimes(n){
-    
+function findPrimes(n) {
+
     const primeArr = [];
 
-    for(let i=2; i<=n; i++){
+    for (let i = 2; i <= n; i++) {
         let isPrime = true;
 
-        for(let j=2 ; j<=Math.sqrt(i); j++){
-            if(i%j === 0){
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0) {
                 isPrime = false;
                 break;
             }
         }
 
-        if(isPrime){
+        if (isPrime) {
             primeArr.push(i);
         }
     }
@@ -269,13 +260,13 @@ console.log(findPrimes(20));
 
 // Character Reversal
 
-function reverseString(str){
+function reverseString(str) {
 
-    let strArr = str.split(" ").reverse().map(item =>{
+    let strArr = str.split(" ").reverse().map(item => {
         return item.split("").reverse().join("");
     }).join(" ");
 
-    console.log(strArr);
+    return strArr;
 }
 
 reverseString("AlmaBetter University");
@@ -284,21 +275,22 @@ reverseString("AlmaBetter University");
 
 // Sign of Product
 
-function signOfProduct(arr){
+function signOfProduct(nums) {
 
     let negativeCount = 0;
 
-    for(const elem of arr){
-        if(elem === 0){
+    for (const elem of nums) {
+        if (elem === 0) {
             return 0;
         }
-    if(elem < 0){
-        negativeCount++;
-    }
+        if (elem < 0) {
+            negativeCount++;
+        }
 
     }
 
-    return negativeCount%2===0? 1 : -1;
+
+    return negativeCount % 2 === 0 ? 1 : -1;
 }
 
 
@@ -310,13 +302,13 @@ console.log(signOfProduct([56, -3, -5, -4]));
 // Check Sign
 
 
-function checkSign(a,b,c){
+function checkSign(num1, num2, num3) {
 
-    let arr = [a,b,c];
+    let arr = [num1, num2, num3];
     let signArr = arr.map(num => {
-        if(num>0){
+        if (num > 0) {
             return "+";
-        }else{
+        } else {
             return "-";
         }
     })
@@ -325,17 +317,17 @@ function checkSign(a,b,c){
 
 }
 
-console.log(checkSign(-2,-5,8));
+console.log(checkSign(-2, -5, 8));
 
 
 // URL Slug Generator
 
-function generateSlug(str){
+function generateSlug(title) {
 
 
-    // return str.trim().toLowerCase().replaceAll(" ", "-")+".com";
+    // return title.trim().toLowerCase().replaceAll(" ", "-")+".com";
 
-    return str.trim().toLowerCase().replaceAll(/\s+/g, "-")+".com";
+    return title.trim().toLowerCase().replaceAll(/\s+/g, "-") + ".com";
 }
 
 console.log(generateSlug("AlmaBetter     Web Dev"))
@@ -345,21 +337,21 @@ console.log(generateSlug("AlmaBetter     Web Dev"))
 
 // Shortest Word Distance
 
-function shortestDistance(wordsDict,str1, str2){
+function shortestDistance(wordsDict, word1, word2) {
 
-    let index1 = -1; 
-    let index2 = -1; 
+    let index1 = -1;
+    let index2 = -1;
     let minDistance = Infinity;
 
     for (let i = 0; i < wordsDict.length; i++) {
-        if (wordsDict[i] === str1) {
+        if (wordsDict[i] === word1) {
             index1 = i;
         }
-        if (wordsDict[i] === str2) {
+        if (wordsDict[i] === word2) {
             index2 = i;
         }
 
-     if (index1 !== -1 && index2 !== -1) {
+        if (index1 !== -1 && index2 !== -1) {
             const distance = Math.abs(index1 - index2);
             if (distance < minDistance) {
                 minDistance = distance;
@@ -378,13 +370,13 @@ console.log(shortestDistance(wordsDict, "practice", "perfect")); // Output: 1
 
 // Flip Game
 
-function findMove(str){
+function findMove(s) {
 
     const result = [];
 
-    for(let i=0; i<str.length-1; i++){
-        if(str[i]=== "+" && str[i+1]==="+"){
-            const newMove = str.slice(0,i)+"--"+str.slice(i+2);
+    for (let i = 0; i < s.length - 1; i++) {
+        if (s[i] === "+" && s[i + 1] === "+") {
+            const newMove = s.slice(0, i) + "--" + s.slice(i + 2);
             result.push(newMove);
         }
     }
@@ -398,9 +390,9 @@ console.log(findMove("++-++"));
 // Swap Consecutive Characters
 
 
-function swapConsecutiveCharacters(str){
+function swapConsecutiveCharacters(str) {
 
-      let result = "";
+    let result = "";
 
     for (let i = 0; i < str.length; i += 2) {
         if (i + 1 < str.length) {
@@ -419,21 +411,21 @@ console.log(swapConsecutiveCharacters("Deepka"));
 
 // Array Intersection
 
-function arrayIntersection(arr1, arr2){
+function arrayIntersection(array1, array2) {
 
     // const commonArr = [];
-    // for(const item of arr1){
-    //     if(arr2.includes(item) && !commonArr.includes(item)){
+    // for(const item of array1){
+    //     if(array2.includes(item) && !commonArr.includes(item)){
     //         commonArr.push(item);
     //     }
     // }
     // return commonArr;
 
-    const setArr = new Set(arr2);
+    const setArr = new Set(array2);
     const commonArr = new Set();
 
-    for(const item of arr1){
-        if(setArr.has(item)){
+    for (const item of array1) {
+        if (setArr.has(item)) {
             commonArr.add(item);
         }
     }
@@ -443,3 +435,34 @@ function arrayIntersection(arr1, arr2){
 }
 
 console.log(arrayIntersection([1, 2, 2, 3, 4, 5], [2, 3, 3, 6]));
+
+
+
+
+
+// Insert 7
+
+function insert7(inputString) {
+
+    let count = 0;
+    let result = "";
+
+    for (let char of inputString) {
+        result += char;
+
+        if (char !== " ") {
+            count++;
+        }
+
+        if (count === 6) {
+            result += "7";
+            count = 0;
+        }
+    }
+
+    return result;
+
+}
+
+
+console.log(insert7("Hello World and Universe!"));

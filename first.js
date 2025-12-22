@@ -704,23 +704,6 @@ function findLongestWord(str){
     return maxLength;
 }
 
-// “Hi everyone, in this video I’ll explain why we can use the for...of loop instead of a traditional for loop in JavaScript.”
-
-// “First of all, the biggest advantage of for...of is readability.
-// With for...of, we directly work with values, not indexes, so the code becomes easier to understand.”
-
-// “For example, instead of managing the index manually and writing conditions like i < length, for...of lets us focus only on the actual data we want to process.”
-
-// “Another benefit is that it reduces errors.
-// In a normal for loop, it’s easy to make mistakes like using <= instead of <, which can cause logical bugs.
-// With for...of, these index-related errors don’t happen.”
-
-// “for...of also requires less code.
-// There’s no counter variable, no increment statement, and no boundary condition.
-// This makes the code cleaner and easier to maintain.”
-
-// “Another important point is that for...of works with any iterable, like arrays, strings, sets, and maps.
-// So it’s very flexible in modern JavaScript.”
 
 
 
@@ -738,22 +721,6 @@ function titleCase(str){
 
    
 }
-
-// console.log(titleCase("My name is Deepak"))
-
-
-// “In my approach, I use the map() method instead.
-// map() is designed for transforming data, so it makes the intent of the code much clearer.”
-
-// “With map(), I don’t have to manage indexes or worry about loop conditions.
-// Each word is transformed and returned directly.”
-
-// “Both approaches have the same time and space complexity, but the map() version is more readable, safer, and follows modern JavaScript practices.”
-
-// “So overall, the map() approach is cleaner and easier to maintain, especially in real-world applications.”
-
-
-
 
 
 
