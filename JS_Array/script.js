@@ -91,3 +91,10 @@ let arr6 = [3, 7, 2, 9, 4].reduce((acc, crr)=>{
 })
 
 console.log (arr6);
+
+
+let arr7 = [1, 2, 2, 3, 4, 4, 5].reduce((acc=[], crr)=>{
+    if(!acc.includes(crr)){
+        acc.push(crr)
+    }
+},arr7[0])
