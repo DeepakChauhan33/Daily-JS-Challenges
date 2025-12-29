@@ -466,3 +466,59 @@ function insert7(inputString) {
 
 
 console.log(insert7("Hello World and Universe!"));
+
+
+
+// Excel Sheet Column Number
+
+function titleToNumber(columnTitle) {
+    
+    let result = 0;
+
+    for(let i=0;i<columnTitle.length;i++){
+
+        const charCode = columnTitle.charCodeAt(i)-64;
+         result = result*26+charCode;
+
+    }
+
+    return result;
+    
+}
+
+
+console.log(titleToNumber("ABc"))
+
+
+
+
+// Wizard's Magical Search for Spells
+
+function binarySearch(arr, k){
+
+   let start= 0;
+   let last = arr.length-1;
+
+   while(start <= last){
+
+    let middle = Math.floor((start+last)/2);
+
+    if(arr[middle]===k){
+        return middle;
+
+    }else if(arr[middle]< k){
+        start = middle+1;
+
+    }else{
+        last = middle-1;
+
+    }
+   }
+
+   return -1;
+
+   
+
+}
+
+console.log(binarySearch( [2, 4, 6, 8, 10],8))
