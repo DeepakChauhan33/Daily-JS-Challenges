@@ -472,18 +472,18 @@ console.log(insert7("Hello World and Universe!"));
 // Excel Sheet Column Number
 
 function titleToNumber(columnTitle) {
-    
+
     let result = 0;
 
-    for(let i=0;i<columnTitle.length;i++){
+    for (let i = 0; i < columnTitle.length; i++) {
 
-        const charCode = columnTitle.charCodeAt(i)-64;
-         result = result*26+charCode;
+        const charCode = columnTitle.charCodeAt(i) - 64;
+        result = result * 26 + charCode;
 
     }
 
     return result;
-    
+
 }
 
 
@@ -494,31 +494,71 @@ console.log(titleToNumber("ABc"))
 
 // Wizard's Magical Search for Spells
 
-function binarySearch(arr, k){
+function binarySearch(arr, k) {
 
-   let start= 0;
-   let last = arr.length-1;
+    let start = 0;
+    let last = arr.length - 1;
 
-   while(start <= last){
+    while (start <= last) {
 
-    let middle = Math.floor((start+last)/2);
+        let middle = Math.floor((start + last) / 2);
 
-    if(arr[middle]===k){
-        return middle;
+        if (arr[middle] === k) {
+            return middle;
 
-    }else if(arr[middle]< k){
-        start = middle+1;
+        } else if (arr[middle] < k) {
+            start = middle + 1;
 
-    }else{
-        last = middle-1;
+        } else {
+            last = middle - 1;
 
+        }
     }
-   }
 
-   return -1;
+    return -1;
 
-   
+
 
 }
 
-console.log(binarySearch( [2, 4, 6, 8, 10],8))
+console.log(binarySearch([2, 4, 6, 8, 10], 8))
+
+
+
+
+// Table Tennis Winner
+
+function winorlose(s) {
+
+    let one=0;
+    let zero=0;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '1') {
+            one++;
+        } else if (s[i] === '0') {
+            zero++;
+        }
+
+        if (one >= 11 && one - zero >= 2) {
+            return "WIN"
+        }
+
+        if (zero >= 11 && zero - one >= 2) {
+            return "LOSE"
+        }
+
+
+        if (s[s.length] - 1 === "1") {
+            return "WIN"
+        }else{
+            return "LOSE"
+        }
+
+    }
+}
+
+
+
+
+console.log(winorlose(11111111110000000000));
