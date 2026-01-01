@@ -236,3 +236,22 @@ console.log(totalsalary);
 
 let color = ['pink', 'blue', 'green', 'red'];
 
+
+let concatColor = color.reduce((acc, crr)=>{
+    return acc += crr;
+},"")
+console.log(concatColor);
+
+
+
+
+// reduce method: Round off all the decimal numbers in an array and sum all the values 
+
+let values = [9.8, 9.7, 4.5, 3.4];
+
+let roundVal = values.reduce((acc, crr)=>{
+    return acc + Math.round(crr);
+},0)
+
+
+console.log(roundVal);
