@@ -78,3 +78,135 @@
 // }
 
 // getNumber();
+
+
+
+// async function fetchNumber() {
+
+//   let promise =  new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(10);
+//     }, 1000);
+//   });
+
+//   try{
+//     const val = await promise;
+//     console.log(val);
+//   }catch(err){
+//     console.log(err);
+//   }
+
+// }
+
+// fetchNumber();
+
+
+
+
+// PROMISE PRATICE
+
+// let promise = new Promise((resolve, reject) => {
+
+//     setTimeout(() => {
+//         resolve("Hello Promise")
+//     }, 2000)
+// })
+
+
+// promise.then((msg) => console.log(msg))
+//     .catch((err) => console.log(err))
+
+// let promise2 = new Promise((resolve, reject) => {
+
+//     setTimeout(() => {
+//         reject("Promise rejected")
+//     }, 1000)
+// });
+
+
+
+// let promise3 = new Promise((resolve, reject) => {
+
+//     return resolve(5);
+// })
+
+
+// promise3
+//     .then((val) => {
+
+//         return new Promise((resolve) => {
+//             setTimeout(() => {
+//                 console.log(val);
+//                 resolve(val * 2);
+//             })
+//         },1000)
+//     })
+//     .then((val) => {
+//         return new Promise((resolve) => {
+//             setTimeout(() => {
+//                 console.log(val);
+//                 resolve(val * 3);
+//             },2000)
+//         })
+//     }).then((val) => {
+//         return new Promise((resolve) => {
+//             setTimeout(() => {
+//                 console.log(val);
+//                 resolve(val * 3);
+//             },3000)
+//         })
+//     })
+//     .catch((err) => console.log(err));
+
+
+function checkNumber(num) {
+  return new Promise((resolve, reject) => {
+    if(num>10){
+        resolve("Number is Big")
+    }else{
+        reject("Number is small")
+    }
+  });
+}
+
+
+checkNumber(80)
+.then((res)=>console.log(res))
+.catch((err)=> console.log(err));
+
+
+const promise = new Promise((resolve, reject) => {
+
+    return resolve(10);
+})
+
+// promise.then((num)=> num*2)
+// .then((num)=>num+3)
+// .then((num)=>console.log(num))
+
+
+promise.then(()=>{
+    throw new Error("Something went wrong");
+})
+.catch((err)=>{console.log(err)
+    return "Recovered"
+})
+.then((msg)=>{
+    console.log(msg);
+})
+
+
+async function calculate(){
+    const num = await promise;
+    
+    try{
+        console.log(num*2)
+    }catch{
+        console.log("Error")
+    }
+}
+
+
+calculate();
+
+
