@@ -39,3 +39,67 @@
 
 
 
+var buyChoco = function(prices, money) {
+    
+    const sortPrices = prices.sort();
+    const val = sortPrices[0]+sortPrices[1];
+    console.log(val)
+
+    if(money>=val){
+        return money-val;
+    }else{
+        return money
+    }
+    
+};
+
+
+console.log(buyChoco([1,2,2],3))
+
+
+
+var searchRange = function(nums, target){
+  
+   const result = [];
+
+   for(let i=0; i<-nums.length;i++){
+
+    if(nums[i] === target){
+        result.push(i);
+    }
+    
+   }
+
+
+};
+
+
+
+const plusOne = function(digits){
+    
+    // const n = digits.length;
+
+    // const newArr = [];
+    
+    // for(let i=0; i<n; i++){
+       
+    //     if(i===n-1){
+    //         let num = digits[i]+1;
+    //         newArr.push(num);
+    //         console.log(1)
+    //     }
+    //     else{
+    //         newArr.push(digits[i]);
+    //         console.log(1)
+    //     }
+    // }
+    
+    // return newArr
+
+
+    return (Number(digits.join(''))+1).toString().split('').map(Number);
+    
+};
+
+
+console.log(plusOne([9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]));
