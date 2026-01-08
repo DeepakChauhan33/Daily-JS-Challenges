@@ -159,54 +159,99 @@
 //     .catch((err) => console.log(err));
 
 
-function checkNumber(num) {
-  return new Promise((resolve, reject) => {
-    if(num>10){
-        resolve("Number is Big")
-    }else{
-        reject("Number is small")
-    }
-  });
+// function checkNumber(num) {
+//   return new Promise((resolve, reject) => {
+//     if(num>10){
+//         resolve("Number is Big")
+//     }else{
+//         reject("Number is small")
+//     }
+//   });
+// }
+
+
+// checkNumber(80)
+// .then((res)=>console.log(res))
+// .catch((err)=> console.log(err));
+
+
+// const promise = new Promise((resolve, reject) => {
+
+//     return resolve(10);
+// })
+
+// // promise.then((num)=> num*2)
+// // .then((num)=>num+3)
+// // .then((num)=>console.log(num))
+
+
+// promise.then(()=>{
+//     throw new Error("Something went wrong");
+// })
+// .catch((err)=>{console.log(err)
+//     return "Recovered"
+// })
+// .then((msg)=>{
+//     console.log(msg);
+// })
+
+
+// async function calculate(){
+//     const num = await promise;
+    
+//     try{
+//         console.log(num*2)
+//     }catch{
+//         console.log("Error")
+//     }
+// }
+
+
+// calculate();
+
+const body = document.querySelector('body');
+
+function createCard(product){
+
+
+    const box = document.createElement('div');
+
+    const cardTitle = document.createElement('h2');
+    cardTitle.textContent = product.title;
+
+    const rating = document.createElement('span');
+    rating.textContent=product.rating;
+
+
+
+
+    box.appendChild(cardTitle);
+    box.appendChild(rating)
+
+    return box;
 }
 
 
-checkNumber(80)
-.then((res)=>console.log(res))
-.catch((err)=> console.log(err));
 
 
-const promise = new Promise((resolve, reject) => {
-
-    return resolve(10);
-})
-
-// promise.then((num)=> num*2)
-// .then((num)=>num+3)
-// .then((num)=>console.log(num))
-
-
-promise.then(()=>{
-    throw new Error("Something went wrong");
-})
-.catch((err)=>{console.log(err)
-    return "Recovered"
-})
-.then((msg)=>{
-    console.log(msg);
-})
-
-
-async function calculate(){
-    const num = await promise;
+async function getData(){
     
     try{
-        console.log(num*2)
-    }catch{
-        console.log("Error")
+        const res = await axios.get("https://dummyjson.com/products");
+        const productList = res.data.products;
+        
+        productList.forEach(product => {
+           body.appendChild(createCard(product));
+        });
+    }catch(err){
+        console.log(err);
     }
 }
 
 
-calculate();
+
+getData();
+
+
 
 
