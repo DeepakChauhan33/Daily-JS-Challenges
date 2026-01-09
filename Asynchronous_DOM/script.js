@@ -256,26 +256,52 @@
 
 // THROTTLING FUNCTION
 
-input = document.querySelector('.inputBox');
+// input = document.querySelector('.inputBox');
 
-input.addEventListener('input', throttel(msg, 2000));
+// input.addEventListener('input', throttel(msg, 2000));
 
-function msg(){
-    console.log("Hello");
-}
+// function msg(){
+//     console.log("Hello");
+// }
 
-function throttel(func, delay){
+// function throttel(func, delay){
 
-    let timeoutId = null;
+//     let timeoutId = null;
 
-    return function(){
-        if(! timeoutId){
-            timeoutId = setTimeout(()=>{
-                func();
-                timeoutId = null;
-            }, delay);
-        }
-    }
-}
+//     return function(){
+//         if(! timeoutId){
+//             timeoutId = setTimeout(()=>{
+//                 func();
+//                 timeoutId = null;
+//             }, delay);
+//         }
+//     }
+// }
+
+
+
+
+// DEBOUNCE FUNCTION
+
+
+// input = document.querySelector('.inputBox');
+
+// input.addEventListener("input", debounce(msg, 1000));
+
+// function msg() {
+//   console.log("Searching...");
+// }
+
+// function debounce(func, delay) {
+//   let timeoutId;
+
+//   return function () {
+//     clearTimeout(timeoutId);
+
+//     timeoutId = setTimeout(() => {
+//       func();
+//     }, delay);
+//   };
+// }
 
 
