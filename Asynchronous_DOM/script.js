@@ -209,49 +209,73 @@
 
 // calculate();
 
-const body = document.querySelector('body');
+// const body = document.querySelector('body');
 
-function createCard(product){
-
-
-    const box = document.createElement('div');
-
-    const cardTitle = document.createElement('h2');
-    cardTitle.textContent = product.title;
-
-    const rating = document.createElement('span');
-    rating.textContent=product.rating;
+// function createCard(product){
 
 
+//     const box = document.createElement('div');
+
+//     const cardTitle = document.createElement('h2');
+//     cardTitle.textContent = product.title;
+
+//     const rating = document.createElement('span');
+//     rating.textContent=product.rating;
 
 
-    box.appendChild(cardTitle);
-    box.appendChild(rating)
 
-    return box;
+
+//     box.appendChild(cardTitle);
+//     box.appendChild(rating)
+
+//     return box;
+// }
+
+
+
+
+// async function getData(){
+    
+//     try{
+//         const res = await axios.get("https://dummyjson.com/products");
+//         const productList = res.data.products;
+        
+//         productList.forEach(product => {
+//            body.appendChild(createCard(product));
+//         });
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+
+
+
+// getData();
+
+
+
+// THROTTLING FUNCTION
+
+input = document.querySelector('.inputBox');
+
+input.addEventListener('input', throttel(msg, 2000));
+
+function msg(){
+    console.log("Hello");
 }
 
+function throttel(func, delay){
 
+    let timeoutId = null;
 
-
-async function getData(){
-    
-    try{
-        const res = await axios.get("https://dummyjson.com/products");
-        const productList = res.data.products;
-        
-        productList.forEach(product => {
-           body.appendChild(createCard(product));
-        });
-    }catch(err){
-        console.log(err);
+    return function(){
+        if(! timeoutId){
+            timeoutId = setTimeout(()=>{
+                func();
+                timeoutId = null;
+            }, delay);
+        }
     }
 }
-
-
-
-getData();
-
-
 
 
