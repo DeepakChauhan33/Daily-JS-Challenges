@@ -1,187 +1,187 @@
 
 
-// BMI CALACULATOR
+// // BMI CALACULATOR
 
-function calculateBMI(weight, height) {
+// function calculateBMI(weight, height) {
 
-    if (weight <= 0 || height <= 0) {
-        return "Weight(in kg) and height(in meters) must be positive values";
-    }
+//     if (weight <= 0 || height <= 0) {
+//         return "Weight(in kg) and height(in meters) must be positive values";
+//     }
 
-    const bmi = weight / (height * height);
+//     const bmi = weight / (height * height);
 
 
-    if (bmi < 18.5) {
-        return "Underweight";
-    } else if (bmi >= 18.5 && bmi < 24.9) {  // Here it uses or operator instead of and operator
-        return "Normal Weight"
-    } else if (bmi >= 25 && bmi < 29.9) { // here also it uses or operator instead of and operator
-        return "Over Weight"
-    } else {
-        return "Obese"
-    }
-}
+//     if (bmi < 18.5) {
+//         return "Underweight";
+//     } else if (bmi >= 18.5 && bmi < 24.9) {  // Here it uses or operator instead of and operator
+//         return "Normal Weight"
+//     } else if (bmi >= 25 && bmi < 29.9) { // here also it uses or operator instead of and operator
+//         return "Over Weight"
+//     } else {
+//         return "Obese"
+//     }
+// }
 
 
 
 
 
-// Temperature Converter
+// // Temperature Converter
 
-function convertTemperature(Temperature, unit) {
+// function convertTemperature(Temperature, unit) {
 
-    if (unit === "C") {
-        const fahrenheit = (Temperature * 1.8) + 32; // Using wrong operator 
-        return fahrenheit.toFixed(2) + "°F";
-    } else if (unit === "F") {
-        const celsius = (Temperature - 32) / 1.8;
-        return celsius.toFixed(2) + "°C";
-    } else {
-        return "Invalid unit. Please use 'C' for Celsius or 'F' for Fahrenheit.";
-    }
-}
+//     if (unit === "C") {
+//         const fahrenheit = (Temperature * 1.8) + 32; // Using wrong operator 
+//         return fahrenheit.toFixed(2) + "°F";
+//     } else if (unit === "F") {
+//         const celsius = (Temperature - 32) / 1.8;
+//         return celsius.toFixed(2) + "°C";
+//     } else {
+//         return "Invalid unit. Please use 'C' for Celsius or 'F' for Fahrenheit.";
+//     }
+// }
 
 
 
 
 
-// Tip Calculator
+// // Tip Calculator
 
-function calculateTip(bilAmount, tipPercentage) {
+// function calculateTip(bilAmount, tipPercentage) {
 
-    const tipAmount = bilAmount * tipPercentage;
-    const totalAmount = bilAmount + tipAmount;
+//     const tipAmount = bilAmount * tipPercentage;
+//     const totalAmount = bilAmount + tipAmount;
 
-    return Number(totalAmount.toFixed(2));  // It uses small n insted of Capital N
-}
+//     return Number(totalAmount.toFixed(2));  // It uses small n insted of Capital N
+// }
 
 
 
 
-// Palindrome Checker
+// // Palindrome Checker
 
-function isPalindrome(str) {
+// function isPalindrome(str) {
 
-    const clnStr = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();  // Don't use lowecase method
-    console.log(clnStr);
-    const reversedStr = clnStr.split("").reverse().join("");
-    console.log(reversedStr);
-    return reversedStr === clnStr;
-}
+//     const clnStr = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();  // Don't use lowecase method
+//     console.log(clnStr);
+//     const reversedStr = clnStr.split("").reverse().join("");
+//     console.log(reversedStr);
+//     return reversedStr === clnStr;
+// }
 
 
 
 
 
-//Vowel Count
+// //Vowel Count
 
-function countVowels(str) {
+// function countVowels(str) {
 
-    const chngStr = str.toLowerCase();
-    const vowels = "aeiou";
-    let vowelsCount = 0;
+//     const chngStr = str.toLowerCase();
+//     const vowels = "aeiou";
+//     let vowelsCount = 0;
 
-    for (let char of chngStr) {   // In the ab code they used for loop but their is Wrong loop condition (<=)
-        if (vowels.includes(char)) {
-            vowelsCount++;
-        }
-    }
+//     for (let char of chngStr) {   // In the ab code they used for loop but their is Wrong loop condition (<=)
+//         if (vowels.includes(char)) {
+//             vowelsCount++;
+//         }
+//     }
 
-    return vowelsCount;
-}
+//     return vowelsCount;
+// }
 
 
 
 
-// Longest Word Length
+// // Longest Word Length
 
-function findLongestWord(str) {
+// function findLongestWord(str) {
 
-    const words = str.split(" ");
-    let maxLength = 0;
+//     const words = str.split(" ");
+//     let maxLength = 0;
 
-    // for(let i=0 ; i<words .length ; i++){
-    //     if(words [i].length>maxLength){
-    //         maxLength=words [i].length;
-    //     }
-    // }
+//     // for(let i=0 ; i<words .length ; i++){
+//     //     if(words [i].length>maxLength){
+//     //         maxLength=words [i].length;
+//     //     }
+//     // }
 
-    for (const item of words) {
-        if (item.length > maxLength) {
-            maxLength = item.length;
-        }
-    }
+//     for (const item of words) {
+//         if (item.length > maxLength) {
+//             maxLength = item.length;
+//         }
+//     }
 
-    return maxLength;
-}
+//     return maxLength;
+// }
 
 
 
 
 
-// Title Case
+// // Title Case
 
-function titleCase(str) {
+// function titleCase(str) {
 
-    let words = str.split(" ").map(item =>
-        item[0].toUpperCase() + item.slice(1)
-    ).join(" ");
+//     let words = str.split(" ").map(item =>
+//         item[0].toUpperCase() + item.slice(1)
+//     ).join(" ");
 
-    return words;
+//     return words;
 
 
-}
+// }
 
-console.log(titleCase("My name is Deepak"))
+// console.log(titleCase("My name is Deepak"))
 
 
 
 
 
 
-// Count Occurrences of a Character
+// // Count Occurrences of a Character
 
-function countOccurrences(str, char) {
-    // let count = 0;
+// function countOccurrences(str, char) {
+//     // let count = 0;
 
-    // for(let ch of str){
-    //     if(char.includes(ch)){
-    //         count++;
-    //     }
-    // }
+//     // for(let ch of str){
+//     //     if(char.includes(ch)){
+//     //         count++;
+//     //     }
+//     // }
 
-    // return count;
+//     // return count;
 
-    console.log(str.split(char));
-    return str.split(char).length - 1;
+//     console.log(str.split(char));
+//     return str.split(char).length - 1;
 
-}
+// }
 
-console.log(countOccurrences("My name is Deepak", "e"));
+// console.log(countOccurrences("My name is Deepak", "e"));
 
 
 
 
 
-// Shopping Cart Total
+// // Shopping Cart Total
 
-function calculateTotal(arr) {
+// function calculateTotal(arr) {
 
 
-    return arr.reduce((total, item) => {
-        return total + item.price * item.quantity;
-    }, 0);
+//     return arr.reduce((total, item) => {
+//         return total + item.price * item.quantity;
+//     }, 0);
 
-}
+// }
 
 
-const cart1 = [
-    { name: "Laptop", price: 1000, quantity: 1 },
-    { name: "Phone", price: 500, quantity: 2 },
-    { name: "Headphones", price: 50, quantity: 4 },
-];
+// const cart1 = [
+//     { name: "Laptop", price: 1000, quantity: 1 },
+//     { name: "Phone", price: 500, quantity: 2 },
+//     { name: "Headphones", price: 50, quantity: 4 },
+// ];
 
-console.log(calculateTotal(cart1));
+// console.log(calculateTotal(cart1));
 
 
 
@@ -189,376 +189,400 @@ console.log(calculateTotal(cart1));
 
 
 
-// Fizz Buzz
+// // Fizz Buzz
 
-function fizzBuzz(n) {
+// function fizzBuzz(n) {
 
-    const newArr = [];
+//     const newArr = [];
 
-    for (let i = 1; i <= n; i++) {
+//     for (let i = 1; i <= n; i++) {
 
-        switch (true) {
+//         switch (true) {
 
-            case (i % 3 == 0 && i % 4 === 0):
-                newArr.push("FizzBuzz");
-                break;
+//             case (i % 3 == 0 && i % 4 === 0):
+//                 newArr.push("FizzBuzz");
+//                 break;
 
-            case (i % 3 == 0):
-                newArr.push("Fizz");
-                break;
+//             case (i % 3 == 0):
+//                 newArr.push("Fizz");
+//                 break;
 
-            case (i % 4 == 0):
-                newArr.push("Buzz")
-                break;
+//             case (i % 4 == 0):
+//                 newArr.push("Buzz")
+//                 break;
 
-            default:
-                newArr.push(String(i));
-        }
+//             default:
+//                 newArr.push(String(i));
+//         }
 
-    }
+//     }
 
-    return newArr;
+//     return newArr;
 
-}
+// }
 
-console.log(fizzBuzz(12));
+// console.log(fizzBuzz(12));
 
 
 
 
-// Prime Numbers
+// // Prime Numbers
 
-function findPrimes(n) {
+// function findPrimes(n) {
 
-    const primeArr = [];
+//     const primeArr = [];
 
-    for (let i = 2; i <= n; i++) {
-        let isPrime = true;
+//     for (let i = 2; i <= n; i++) {
+//         let isPrime = true;
 
-        for (let j = 2; j <= Math.sqrt(i); j++) {
-            if (i % j === 0) {
-                isPrime = false;
-                break;
-            }
-        }
+//         for (let j = 2; j <= Math.sqrt(i); j++) {
+//             if (i % j === 0) {
+//                 isPrime = false;
+//                 break;
+//             }
+//         }
 
-        if (isPrime) {
-            primeArr.push(i);
-        }
-    }
+//         if (isPrime) {
+//             primeArr.push(i);
+//         }
+//     }
 
-    return primeArr;
-}
+//     return primeArr;
+// }
 
 
-console.log(findPrimes(20));
+// console.log(findPrimes(20));
 
 
 
 
 
 
-// Character Reversal
+// // Character Reversal
 
-function reverseString(str) {
+// function reverseString(str) {
 
-    let strArr = str.split(" ").reverse().map(item => {
-        return item.split("").reverse().join("");
-    }).join(" ");
+//     let strArr = str.split(" ").reverse().map(item => {
+//         return item.split("").reverse().join("");
+//     }).join(" ");
 
-    return strArr;
-}
+//     return strArr;
+// }
 
-reverseString("AlmaBetter University");
+// reverseString("AlmaBetter University");
 
 
 
-// Sign of Product
+// // Sign of Product
 
-function signOfProduct(nums) {
+// function signOfProduct(nums) {
 
-    let negativeCount = 0;
+//     let negativeCount = 0;
 
-    for (const elem of nums) {
-        if (elem === 0) {
-            return 0;
-        }
-        if (elem < 0) {
-            negativeCount++;
-        }
+//     for (const elem of nums) {
+//         if (elem === 0) {
+//             return 0;
+//         }
+//         if (elem < 0) {
+//             negativeCount++;
+//         }
 
-    }
+//     }
 
 
-    return negativeCount % 2 === 0 ? 1 : -1;
-}
+//     return negativeCount % 2 === 0 ? 1 : -1;
+// }
 
 
-console.log(signOfProduct([56, -3, -5, -4]));
+// console.log(signOfProduct([56, -3, -5, -4]));
 
 
 
 
-// Check Sign
+// // Check Sign
 
 
-function checkSign(num1, num2, num3) {
+// function checkSign(num1, num2, num3) {
 
-    let arr = [num1, num2, num3];
-    let signArr = arr.map(num => {
-        if (num > 0) {
-            return "+";
-        } else {
-            return "-";
-        }
-    })
+//     let arr = [num1, num2, num3];
+//     let signArr = arr.map(num => {
+//         if (num > 0) {
+//             return "+";
+//         } else {
+//             return "-";
+//         }
+//     })
 
-    return signArr.join("");
+//     return signArr.join("");
 
-}
+// }
 
-console.log(checkSign(-2, -5, 8));
+// console.log(checkSign(-2, -5, 8));
 
 
-// URL Slug Generator
+// // URL Slug Generator
 
-function generateSlug(title) {
+// function generateSlug(title) {
 
 
-    // return title.trim().toLowerCase().replaceAll(" ", "-")+".com";
+//     // return title.trim().toLowerCase().replaceAll(" ", "-")+".com";
 
-    return title.trim().toLowerCase().replaceAll(/\s+/g, "-") + ".com";
-}
+//     return title.trim().toLowerCase().replaceAll(/\s+/g, "-") + ".com";
+// }
 
-console.log(generateSlug("AlmaBetter     Web Dev"))
+// console.log(generateSlug("AlmaBetter     Web Dev"))
 
 
 
 
-// Shortest Word Distance
+// // Shortest Word Distance
 
-function shortestDistance(wordsDict, word1, word2) {
+// function shortestDistance(wordsDict, word1, word2) {
 
-    let index1 = -1;
-    let index2 = -1;
-    let minDistance = Infinity;
+//     let index1 = -1;
+//     let index2 = -1;
+//     let minDistance = Infinity;
 
-    for (let i = 0; i < wordsDict.length; i++) {
-        if (wordsDict[i] === word1) {
-            index1 = i;
-        }
-        if (wordsDict[i] === word2) {
-            index2 = i;
-        }
+//     for (let i = 0; i < wordsDict.length; i++) {
+//         if (wordsDict[i] === word1) {
+//             index1 = i;
+//         }
+//         if (wordsDict[i] === word2) {
+//             index2 = i;
+//         }
 
-        if (index1 !== -1 && index2 !== -1) {
-            const distance = Math.abs(index1 - index2);
-            if (distance < minDistance) {
-                minDistance = distance;
-            }
-        }
-    }
+//         if (index1 !== -1 && index2 !== -1) {
+//             const distance = Math.abs(index1 - index2);
+//             if (distance < minDistance) {
+//                 minDistance = distance;
+//             }
+//         }
+//     }
 
-    return minDistance;
-}
+//     return minDistance;
+// }
 
-const wordsDict = ["practice", "makes", "perfect", "coding", "makes"];
-console.log(shortestDistance(wordsDict, "coding", "makes")); // Output: 1
-console.log(shortestDistance(wordsDict, "practice", "perfect")); // Output: 1
+// const wordsDict = ["practice", "makes", "perfect", "coding", "makes"];
+// console.log(shortestDistance(wordsDict, "coding", "makes")); // Output: 1
+// console.log(shortestDistance(wordsDict, "practice", "perfect")); // Output: 1
 
 
 
-// Flip Game
+// // Flip Game
 
-function findMove(s) {
+// function findMove(s) {
 
-    const result = [];
+//     const result = [];
 
-    for (let i = 0; i < s.length - 1; i++) {
-        if (s[i] === "+" && s[i + 1] === "+") {
-            const newMove = s.slice(0, i) + "--" + s.slice(i + 2);
-            result.push(newMove);
-        }
-    }
+//     for (let i = 0; i < s.length - 1; i++) {
+//         if (s[i] === "+" && s[i + 1] === "+") {
+//             const newMove = s.slice(0, i) + "--" + s.slice(i + 2);
+//             result.push(newMove);
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-console.log(findMove("++-++"));
+// console.log(findMove("++-++"));
 
 
-// Swap Consecutive Characters
+// // Swap Consecutive Characters
 
 
-function swapConsecutiveCharacters(str) {
+// function swapConsecutiveCharacters(str) {
 
-    let result = "";
+//     let result = "";
 
-    for (let i = 0; i < str.length; i += 2) {
-        if (i + 1 < str.length) {
-            result += str[i + 1] + str[i];
-        } else {
-            result += str[i];
-        }
-    }
+//     for (let i = 0; i < str.length; i += 2) {
+//         if (i + 1 < str.length) {
+//             result += str[i + 1] + str[i];
+//         } else {
+//             result += str[i];
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
 
-console.log(swapConsecutiveCharacters("Deepka"));
+// console.log(swapConsecutiveCharacters("Deepka"));
 
 
-// Array Intersection
+// // Array Intersection
 
-function arrayIntersection(array1, array2) {
+// function arrayIntersection(array1, array2) {
 
-    // const commonArr = [];
-    // for(const item of array1){
-    //     if(array2.includes(item) && !commonArr.includes(item)){
-    //         commonArr.push(item);
-    //     }
-    // }
-    // return commonArr;
+//     // const commonArr = [];
+//     // for(const item of array1){
+//     //     if(array2.includes(item) && !commonArr.includes(item)){
+//     //         commonArr.push(item);
+//     //     }
+//     // }
+//     // return commonArr;
 
-    const setArr = new Set(array2);
-    const commonArr = new Set();
+//     const setArr = new Set(array2);
+//     const commonArr = new Set();
 
-    for (const item of array1) {
-        if (setArr.has(item)) {
-            commonArr.add(item);
-        }
-    }
+//     for (const item of array1) {
+//         if (setArr.has(item)) {
+//             commonArr.add(item);
+//         }
+//     }
 
-    return [...commonArr];
+//     return [...commonArr];
 
-}
+// }
 
-console.log(arrayIntersection([1, 2, 2, 3, 4, 5], [2, 3, 3, 6]));
+// console.log(arrayIntersection([1, 2, 2, 3, 4, 5], [2, 3, 3, 6]));
 
 
 
 
 
-// Insert 7
+// // Insert 7
 
-function insert7(inputString) {
+// function insert7(inputString) {
 
-    let count = 0;
-    let result = "";
+//     let count = 0;
+//     let result = "";
 
-    for (let char of inputString) {
-        result += char;
+//     for (let char of inputString) {
+//         result += char;
 
-        if (char !== " ") {
-            count++;
-        }
+//         if (char !== " ") {
+//             count++;
+//         }
 
-        if (count === 6) {
-            result += "7";
-            count = 0;
-        }
-    }
+//         if (count === 6) {
+//             result += "7";
+//             count = 0;
+//         }
+//     }
 
-    return result;
+//     return result;
 
-}
+// }
 
 
-console.log(insert7("Hello World and Universe!"));
+// console.log(insert7("Hello World and Universe!"));
 
 
 
-// Excel Sheet Column Number
+// // Excel Sheet Column Number
 
-function titleToNumber(columnTitle) {
+// function titleToNumber(columnTitle) {
 
-    let result = 0;
+//     let result = 0;
 
-    for (let i = 0; i < columnTitle.length; i++) {
+//     for (let i = 0; i < columnTitle.length; i++) {
 
-        const charCode = columnTitle.charCodeAt(i) - 64;
-        result = result * 26 + charCode;
+//         const charCode = columnTitle.charCodeAt(i) - 64;
+//         result = result * 26 + charCode;
 
-    }
+//     }
 
-    return result;
+//     return result;
 
-}
+// }
 
 
-console.log(titleToNumber("ABc"))
+// console.log(titleToNumber("ABc"))
 
 
 
 
-// Wizard's Magical Search for Spells
+// // Wizard's Magical Search for Spells
 
-function binarySearch(arr, k) {
+// function binarySearch(arr, k) {
 
-    let start = 0;
-    let last = arr.length - 1;
+//     let start = 0;
+//     let last = arr.length - 1;
 
-    while (start <= last) {
+//     while (start <= last) {
 
-        let middle = Math.floor((start + last) / 2);
+//         let middle = Math.floor((start + last) / 2);
 
-        if (arr[middle] === k) {
-            return middle;
+//         if (arr[middle] === k) {
+//             return middle;
 
-        } else if (arr[middle] < k) {
-            start = middle + 1;
+//         } else if (arr[middle] < k) {
+//             start = middle + 1;
 
-        } else {
-            last = middle - 1;
+//         } else {
+//             last = middle - 1;
 
+//         }
+//     }
+
+//     return -1;
+
+
+
+// }
+
+// console.log(binarySearch([2, 4, 6, 8, 10], 8))
+
+
+
+
+// // Table Tennis Winner
+
+// function winorlose(s) {
+
+//     let one=0;
+//     let zero=0;
+
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === '1') {
+//             one++;
+//         } else if (s[i] === '0') {
+//             zero++;
+//         }
+
+//         if (one >= 11 && one - zero >= 2) {
+//             return "WIN"
+//         }
+
+//         if (zero >= 11 && zero - one >= 2) {
+//             return "LOSE"
+//         }
+
+
+//         if (s[s.length] - 1 === "1") {
+//             return "WIN"
+//         }else{
+//             return "LOSE"
+//         }
+
+//     }
+// }
+
+
+
+
+function search(arr, n, x){
+    for(let i=0; i<n;i++){
+        if(arr[i]===x){
+            return i;
         }
     }
 
     return -1;
+} 
 
 
 
+console.log(search([1,2,3,4,5],5,10));
+
+
+
+function even(arr){
+    return arr.filter(val=>val%2===0);
 }
 
-console.log(binarySearch([2, 4, 6, 8, 10], 8))
-
-
-
-
-// Table Tennis Winner
-
-function winorlose(s) {
-
-    let one=0;
-    let zero=0;
-
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === '1') {
-            one++;
-        } else if (s[i] === '0') {
-            zero++;
-        }
-
-        if (one >= 11 && one - zero >= 2) {
-            return "WIN"
-        }
-
-        if (zero >= 11 && zero - one >= 2) {
-            return "LOSE"
-        }
-
-
-        if (s[s.length] - 1 === "1") {
-            return "WIN"
-        }else{
-            return "LOSE"
-        }
-
-    }
+function main(){
+    console.log(even([1,2,3,4,5,6]));
 }
 
-
-
-
-console.log(winorlose(11111111110000000000));
+main();
