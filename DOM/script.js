@@ -9,7 +9,7 @@
 
 // Parent.addEventListener('click', function(){
 //     console.log("Parent");
-// }, false)
+// },` false)
 
 // Child.addEventListener('click', function(){
 //     console.log("Child");
