@@ -561,28 +561,81 @@
 
 
 
-function search(arr, n, x){
-    for(let i=0; i<n;i++){
-        if(arr[i]===x){
-            return i;
-        }
+// function search(arr, n, x){
+//     for(let i=0; i<n;i++){
+//         if(arr[i]===x){
+//             return i;
+//         }
+//     }
+
+//     return -1;
+// } 
+
+
+
+// console.log(search([1,2,3,4,5],5,10));
+
+
+
+// function even(arr){
+//     return arr.filter(val=>val%2===0);
+// }
+
+// function main(){
+//     console.log(even([1,2,3,4,5,6]));
+// }
+
+// main();
+
+
+
+// function reverseStr(str){
+//      return str.trim().split("").reverse().join("");
+// }
+
+// console.log(reverseStr("  Deepak  "));
+
+
+// user = {"fname": "Dillion","lname": "Megida"}
+
+// console.log(user.fname);
+
+
+
+//FIBONACCI SERIES
+
+function fibo(n){
+
+    if(n<0){
+        console.log(0);
     }
 
-    return -1;
-} 
+    if(n===0){
+        return ;
+    }
 
 
+    let first = 0, second = 1;
 
-console.log(search([1,2,3,4,5],5,10));
+    // let i=3;
+    // while(i<=n){
+    //     let third = first+second;
+    //     console.log(third+" ");
+    //     first=second;
+    //     second=third;
+    //     i++;
+    // }
 
+    
 
-
-function even(arr){
-    return arr.filter(val=>val%2===0);
+    while(first+second<=n){
+        let third = first+second;
+        console.log(third+" ");
+        first=second;
+        second=third;
+    }
 }
 
-function main(){
-    console.log(even([1,2,3,4,5,6]));
-}
 
-main();
+fibo(10);
+
