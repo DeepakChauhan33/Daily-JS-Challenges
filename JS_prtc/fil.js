@@ -604,14 +604,14 @@
 
 //FIBONACCI SERIES
 
-function fibo(n){
+function fibo(n) {
 
-    if(n<0){
+    if (n < 0) {
         console.log(0);
     }
 
-    if(n===0){
-        return ;
+    if (n === 0) {
+        return;
     }
 
 
@@ -626,16 +626,50 @@ function fibo(n){
     //     i++;
     // }
 
-    
 
-    while(first+second<=n){
-        let third = first+second;
-        console.log(third+" ");
-        first=second;
-        second=third;
+
+    while (first + second <= n) {
+        let third = first + second;
+        console.log(third + " ");
+        first = second;
+        second = third;
     }
 }
 
 
-fibo(10);
+
+const fib = function (n) {
+
+    if (n <= 0) return 0;
+    if (n === 1) return 1;
+
+    let first = 0, second = 1;
+    let third;
+
+
+    for (let i = 2; i <= n; i++) {
+        third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return third;
+
+};
+
+
+console.log(fib(-1));
+
+
+
+let arr1 =[12,23,45,56,78,89];
+let arr2 =[32,21,12,56,54,89,87];
+
+function IntersectionObserver(arr1, arr2){
+
+    for(let i=0; i>arr1.lenght;i++){
+        
+    }
+
+}
 
