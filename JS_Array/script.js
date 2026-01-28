@@ -255,3 +255,52 @@ const getCommon = function (nums1, nums2) {
 };
 
 console.log(getCommon(numes1, numes2));
+
+
+
+
+// No Internet So pratice old array probles (remove it);
+
+//1. Check if all the property values(firstName) in an array of object is same or not
+const Children = [
+    {
+        firstName: 'alina',
+        id: 1,
+        age: 12
+    }, {
+        firstName: 'alina',
+        id: 2,
+        age: 12
+    }, {
+        firstName: 'alina',
+        id: 3,
+        age: 12
+    }
+]
+
+let cant=Children[0].firstName;
+console.log(cant);
+let check = Children.every((data)=> {
+  return data.firstName==cant;
+});
+
+console.log(check)
+
+let verified = Children.reduce((acc, crr)=>{
+  return acc && acc.firstName==acc.firstName;
+},true);
+
+console.log(verified)
+
+
+
+
+// 2. Get the value of the first element in an array that has value greater than 20. arr = [1, 2, 3, 10, 30, 20]
+
+let Numarr = [1, 2, 3, 10, 30, 20];
+
+const holder = Numarr.reduce((acc, crr)=>{
+  return acc>20;
+},0)
+
+console.log(holder);
