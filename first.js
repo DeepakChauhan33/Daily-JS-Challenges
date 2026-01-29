@@ -102,4 +102,31 @@ const plusOne = function(digits){
 };
 
 
-console.log(plusOne([9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]));
+// console.log(plusOne([9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]));
+
+
+
+function fibo(num){
+
+    if(num <= 0) {
+        return 0;
+    }
+    if(num === 1) return 1;
+
+    let firstNum = 0;
+    let secondNum = 1;
+    let i=0;
+    while(i<num){
+        console.log(firstNum);
+        console.log(secondNum);
+        let third = firstNum+secondNum;
+        console.log(third);
+    }
+
+}
+
+// fibo(3);
+
+
+
+// 0 1 1 2 3 5 8 13 
