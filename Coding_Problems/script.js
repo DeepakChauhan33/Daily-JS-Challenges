@@ -26,7 +26,7 @@ function solidRect(n){
     }
 }
 
-solidRect(5);
+// solidRect(5);
 
 
 //  Hollow Rectangle
@@ -36,9 +36,9 @@ function hollowRect(a,b){
     for(let i=1; i<=a; i++){
         for(let j=1; j<=b; j++){
             if(i===1 || j===1 || i===a || j===b){
-                print("* ")
+                console.log("* ")
             }else{
-                print(" ")
+                console.log(" ")
             }
         }
         console.log(" 1")
@@ -47,7 +47,31 @@ function hollowRect(a,b){
 }
 
 
-hollowRect(4,5);
+// hollowRect(4,5);
+
+
+
+// Table Print
+
+// Create the multiplication table from 1 to 10 for a given number n and return the table as an array.
+
+function PrintTable(n){
+
+    let table = [];
+
+    for(let i=1; i<=10; i++){
+        table.push(n*i);
+    }
+    return table;
+
+
+
+}
+
+console.log(PrintTable(5));
+
+
+
 
 
 
