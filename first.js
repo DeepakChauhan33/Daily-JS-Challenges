@@ -171,3 +171,24 @@ console.log(sign);
 // Let maxLen be the side length of the largest square you can obtain from any of the given rectangles.
 
 // Return the number of rectangles that can make a square with a side length of maxLen.
+
+
+
+
+var heightChecker = function (heights) {
+
+    let sortedHeight = [...heights].sort((a, b) => a - b);
+
+    let count = 0;
+
+    for (let i = 0; i < heights.length; i++) {
+        if (heights[i] !== sortedHeight[i]) {
+            count++;
+        }
+    }
+
+    return count;
+};
+
+
+console.log(heightChecker([1, 1, 4, 2, 1, 3]));

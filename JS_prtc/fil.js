@@ -604,72 +604,140 @@
 
 //FIBONACCI SERIES
 
-function fibo(n) {
+// function fibo(n) {
 
-    if (n < 0) {
-        console.log(0);
+//     if (n < 0) {
+//         console.log(0);
+//     }
+
+//     if (n === 0) {
+//         return;
+//     }
+
+
+//     let first = 0, second = 1;
+
+// let i=3;
+// while(i<=n){
+//     let third = first+second;
+//     console.log(third+" ");
+//     first=second;
+//     second=third;
+//     i++;
+// }
+
+
+
+//     while (first + second <= n) {
+//         let third = first + second;
+//         console.log(third + " ");
+//         first = second;
+//         second = third;
+//     }
+// }
+
+
+
+// const fib = function (n) {
+
+//     if (n <= 0) return 0;
+//     if (n === 1) return 1;
+
+//     let first = 0, second = 1;
+//     let third;
+
+
+//     for (let i = 2; i <= n; i++) {
+//         third = first + second;
+//         first = second;
+//         second = third;
+//     }
+
+//     return third;
+
+// };
+
+
+// console.log(fib(-1));
+
+
+
+// let arr1 =[12,23,45,56,78,89];
+// let arr2 =[32,21,12,56,54,89,87];
+
+// function IntersectionObserver(arr1, arr2){
+
+//     for(let i=0; i>arr1.lenght;i++){
+
+//     }
+
+// }
+
+
+let taskArr = [
+
+    {
+        name: "Dpk",
+        catg: 'all'
+    },
+
+    {
+        name: "Avnv",
+        catg: 'study'
+    },
+
+    {
+        name: "Dnzl",
+        catg: 'gym'
+    },
+
+    {
+        name: "Aki",
+        catg: 'call'
     }
+]
 
-    if (n === 0) {
-        return;
+
+
+
+const filterSection = document.querySelector('#filterSection');
+const taskCant = document.querySelector('#taskCant');
+
+const category = document.querySelector('#category');
+
+category.addEventListener('change', () => {
+    console.log(category.value);
+})
+
+
+filterSection.addEventListener('click', function (e) {
+
+    if (e.target.tagName === "BUTTON") {
+        console.log('clicked');
+        const filterValue = e.target.dataset.filter;
+
+        if (filterValue === 'all') {
+            renderTask(taskArr);
+        } else {
+            const filterData = taskArr.filter(task => task.catg === filterValue);
+            renderTask(filterData);
+        }
     }
+})
 
 
-    let first = 0, second = 1;
+function renderTask(taskArr) {
 
-    // let i=3;
-    // while(i<=n){
-    //     let third = first+second;
-    //     console.log(third+" ");
-    //     first=second;
-    //     second=third;
-    //     i++;
-    // }
+    taskCant.innerHTML = "";
 
 
-
-    while (first + second <= n) {
-        let third = first + second;
-        console.log(third + " ");
-        first = second;
-        second = third;
-    }
+    taskArr.forEach(task => {
+        const holder = document.createElement('div');
+        holder.innerHTML = task.name;
+        taskCant.appendChild(holder);
+    });
 }
 
 
 
-const fib = function (n) {
-
-    if (n <= 0) return 0;
-    if (n === 1) return 1;
-
-    let first = 0, second = 1;
-    let third;
-
-
-    for (let i = 2; i <= n; i++) {
-        third = first + second;
-        first = second;
-        second = third;
-    }
-
-    return third;
-
-};
-
-
-console.log(fib(-1));
-
-
-
-let arr1 =[12,23,45,56,78,89];
-let arr2 =[32,21,12,56,54,89,87];
-
-function IntersectionObserver(arr1, arr2){
-
-    for(let i=0; i>arr1.lenght;i++){
-        
-    }
-
-}
-
+renderTask(taskArr);
