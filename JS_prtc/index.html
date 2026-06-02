@@ -9,35 +9,44 @@
 
 <body>
 
-    <select name="" id="category">
-        <option value="gym">GYM</option>
-        <option value="call">Call</option>
-        <option value="study">Study</option>
-        <option value="task">Task</option>
-    </select>
 
-    <section id="filterSection">
-        <button data-filter="all">
-            ALl
-        </button>
+    <!-- <div id="cant" style="background-color: red">
 
-        <button data-filter="study">
-            Study
-        </button>
-
-        <button data-filter="gym">
-            GYM
-        </button>
-
-        <button data-filter="call">
-            Call
-        </button>
-    </section>
+        <button>all</button><button>Type</button><button>JS</button><button>Dia</button><button>JAI KHATU SHYAM
+            MARAJ</button>
 
 
-    <section id="taskCant">
 
-    </section>
+
+    </div> -->
+
+
+    <form id="userForm">
+
+        <div>
+            <label>Name</label>
+            <input type="text" id="name" onchange="validateName">
+            <p id="nameErr"></p>
+        </div>
+
+
+        <div>
+            <label>Salary</label>
+            <input type="number" id="salary">
+            <p id="salaryErr"></p>
+        </div>
+
+        <div>
+            <label>Age</label>
+            <input type="text" id="age">
+            <p id="ageErr"></p>
+        </div>
+
+        <button>Sumbit</button>
+
+
+    </form>
+
 
     <script src="fil.js"></script>
 </body>

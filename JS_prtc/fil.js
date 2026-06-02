@@ -2,6 +2,8 @@
 
 // // BMI CALACULATOR
 
+// const { useState } = require("react");
+
 // function calculateBMI(weight, height) {
 
 //     if (weight <= 0 || height <= 0) {
@@ -674,70 +676,264 @@
 // }
 
 
-let taskArr = [
+// let taskArr = [
 
-    {
-        name: "Dpk",
-        catg: 'all'
-    },
+//     {
+//         name: "Dpk",
+//         catg: 'all'
+//     },
 
-    {
-        name: "Avnv",
-        catg: 'study'
-    },
+//     {
+//         name: "Avnv",
+//         catg: 'study'
+//     },
 
-    {
-        name: "Dnzl",
-        catg: 'gym'
-    },
+//     {
+//         name: "Dnzl",
+//         catg: 'gym'
+//     },
 
-    {
-        name: "Aki",
-        catg: 'call'
-    }
-]
-
-
+//     {
+//         name: "Aki",
+//         catg: 'call'
+//     }
+// ]
 
 
-const filterSection = document.querySelector('#filterSection');
-const taskCant = document.querySelector('#taskCant');
-
-const category = document.querySelector('#category');
-
-category.addEventListener('change', () => {
-    console.log(category.value);
-})
 
 
-filterSection.addEventListener('click', function (e) {
+// const filterSection = document.querySelector('#filterSection');
+// const taskCant = document.querySelector('#taskCant');
 
-    if (e.target.tagName === "BUTTON") {
-        console.log('clicked');
-        const filterValue = e.target.dataset.filter;
+// const category = document.querySelector('#category');
 
-        if (filterValue === 'all') {
-            renderTask(taskArr);
-        } else {
-            const filterData = taskArr.filter(task => task.catg === filterValue);
-            renderTask(filterData);
-        }
-    }
-})
+// category.addEventListener('change', () => {
+//     console.log(category.value);
+// })
 
 
-function renderTask(taskArr) {
+// filterSection.addEventListener('click', function (e) {
 
-    taskCant.innerHTML = "";
+//     if (e.target.tagName === "BUTTON") {
+//         console.log('clicked');
+//         const filterValue = e.target.dataset.filter;
+
+//         if (filterValue === 'all') {
+//             renderTask(taskArr);
+//         } else {
+//             const filterData = taskArr.filter(task => task.catg === filterValue);
+//             renderTask(filterData);
+//         }
+//     }
+// })
 
 
-    taskArr.forEach(task => {
-        const holder = document.createElement('div');
-        holder.innerHTML = task.name;
-        taskCant.appendChild(holder);
-    });
+// function renderTask(taskArr) {
+
+//     taskCant.innerHTML = "";
+
+
+//     taskArr.forEach(task => {
+//         const holder = document.createElement('div');
+//         holder.innerHTML = task.name;
+//         taskCant.appendChild(holder);
+//     });
+// }
+
+
+
+// renderTask(taskArr);
+
+
+// const abc = document.querySelector('#cant');
+
+// abc.style.backgroundColor = "yellow";
+
+// abc.addEventListener('click', function (e) {
+
+//     if (e.target.tagName !== 'BUTTON') {
+//         return;
+//     }
+
+//     if (e.target.tagName === 'BUTTON') {
+//         console.log('click')
+//         console.log(e.target.innerText);
+//     }
+// })
+
+
+// let arr = ["Order placed", "Order preparing", "Order delivered"];
+
+
+// function main(cb1, cb2) {
+
+//     console.log("Order {laced");
+
+//     setTimeout(() => {
+//         cb1();
+
+//         setTimeout(() => {
+//             cb2();
+//         }, 2000)
+
+
+//     }, 2000)
+
+
+
+// }
+
+
+
+
+// function op() {
+//     return new Promise((resolve) => {
+//         console.log("order placed");
+//         setTimeout(resolve, 3000);
+//     })
+// }
+
+// function od() {
+//     return new Promise((resolve) => {
+//         console.log('Oder Preparing')
+//         setTimeout(resolve, 3000);
+
+//     })
+// }
+
+// function main() {
+//     return new Promise((resolve) => {
+//         console.log("Order Delivered");
+//         resolve();
+//     })
+// }
+
+// main().
+//     then(op)
+//     .then(od)
+
+
+
+async function api() {
+
+    // try {
+    //     const response = await fetch("https://fakestoreapi.com/products/");
+    //     const data = await response.json();
+    //     console.log(data);
+    // } catch (error) {
+    //     console.log(error);
+    // }
+
+
+    // try {
+    //     const res = await fetch("https://fakestoreapi.com/products/");
+    //     const data = await res.json();
+    //     console.log(data);
+    // } catch (error) {
+    //     console.log(error)
+    // }
 }
 
 
 
-renderTask(taskArr);
+// const promise = fetch('https://fakestoreapi.com/products/');
+
+// promise.then((res) => {
+//     return res.json()
+// }).then((data) => {
+//     console.log(data)
+// }).
+
+//     catch((err) => {
+//         console.log(err);
+//     })
+
+
+// api();
+
+
+
+
+// const form = document.querySelector('#userForm');
+
+// form.addEventListener('submit', function formSubmit(e) {
+
+//     e.preventDefault();
+
+//     console.log("456123789");
+// })
+
+
+const userForm = document.querySelector('#userForm');
+
+
+const nameErr = document.querySelector('#nameErr');
+const salaryErr = document.querySelector('#salaryErr');
+const ageErr = document.querySelector('#ageErr');
+
+
+
+
+const nameInput = document.getElementById('name');
+const salary = document.getElementById('salary');
+const age = document.getElementById('age');
+
+
+const userData = {
+    name: "",
+    salary: ""
+}
+
+
+userForm.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    userData.name = nameInput.value.trim();
+    userData.salary = salary.value.trim();
+
+   sendData(userData);
+
+
+})
+
+
+
+async function sendData(userData) {
+
+    try {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+
+        const data = await res.json();
+        console.log(data);
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+
+async function apiL() {
+
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const data = await response.json();
+
+        if (!data) {
+
+        }
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+// apiL();
